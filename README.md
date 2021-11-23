@@ -1,5 +1,9 @@
-# Ecological data analysis in R (OCEAN 5098)
+---
+title: "Dr. Lauriane Ribas-Deulofeu Website"
+---
+----------------------------------------------------------------------------------
 
-Ths is a introduction to R. Website of the course OCEAN5098. Build using `Distill` for `Rmarkdown`. Knit `.rmd` file individually or fork repository and render website. Password to be requested to the instructor
+This is the repository for my personal website.<br>
+Visit [my website](https://laurianeribas-deulofeu.github.io/OceanoTry2/) to discover more about the exciting research that I have perform mostly in Taiwan and more occasionally elsewhere.
 
-A website from [FRElab](https://www.dipintothereef.com/), Institute of Oceanography, National Taiwan University, TAIWAN
+![Taiwan Fossil Fieldwork](254a82f9402ff85ce4e4afe97abb2c72930ed01f/images/portraits/LaurianeFieldFossil.jpeg)
