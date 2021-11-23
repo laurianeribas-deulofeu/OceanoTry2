@@ -1,8 +1,8 @@
-name: "OCEAN_5098"
-title: "OCEAN 5098"
+name: "Dr. L Ribas-Deulofeu"
+title: "Dr. L Ribas-Deulofeu"
 theme: theme.css
-favicon: images/logo.png
-base_url: https://github.com/vianneydenis/master-oceano.git
+favicon: images/cygne fly.png
+base_url: https://github.com/laurianeribas-deulofeu/OceanoTry2.git
 collections:
   posts:
     categories: true
@@ -15,31 +15,29 @@ creative_commons: CC BY
 output_dir: "."
 navbar:
   logo:
-    image: images/logo.png
-    href: https://www.dipintothereef.com/
+    image: images/cygne fly.png
+    href: https://laurianeribas-deulofeu.github.io/OceanoTry2/
   search: true
   source_url: true
   right:
     - text: "Home"
       href: index.html
-    - text: "Environment"
-      href: environment.html
-    - text: "Manipulation"
+    - text: "Research"
       menu:
-        - text: "Basics"
-          href: manipulation.html    
-        - text: "dplyr"
-          href: dplyr.html  
-        - text: "tidyr"
-          href: tidyr.html 
-    - text: "Types & Structures"
-      href: types.html
-    - text: "Graphics"
-      href: graphics.html
-    - text: "Mapping"
-      href: mapping.html
-    - text: "Loops & Functions"
-      href: loop.html
+      - text: "TRM100"
+        href: manipulation.html 
+      - text: "Typhoons"
+        href: graphics.html
+      - text: "Reef Rugosity"
+        href: manipulation.html  
+      - text: "Dendrophyllia fossils"
+        href: types.html
+    - text: "Publications"
+      href: index.html
+    - text: "Collaborators"
+      href: index.html
+    - text: "Contact"
+      href: index.html 
       
 # commit graphics.html 
 #        - text: "Script"

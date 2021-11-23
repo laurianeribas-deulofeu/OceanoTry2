@@ -82,12 +82,13 @@ code span.vs { color: #008080; } /* VerbatimString */
 code span.wa { color: #008000; font-weight: bold; } /* Warning */
 </style>
 
+
   <!--radix_placeholder_meta_tags-->
   <title>OCEAN 5098: Environment</title>
 
 
   <link rel="license" href="https://creativecommons.org/licenses/by/4.0/"/>
-  <link rel="icon" type="image/png" href="images/logo.png"/>
+  <link rel="icon" type="image/png" href="images/cygne fly.png"/>
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
@@ -1858,7 +1859,10 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2437,7 +2441,7 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <nav class="distill-site-nav distill-site-header">
 <div class="nav-left">
 <a class="logo" href="https://www.dipintothereef.com/">
-<img src="images/logo.png" alt="Logo"/>
+<img src="images/cygne%20fly.PNG" alt="Logo"/>
 </a>
 <a href="index.html" class="title">OCEAN 5098</a>
 <input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
@@ -2537,11 +2541,9 @@ Manipulation
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># R update (to run in R native GUI only)</span>
-<span class='kw'>if</span> <span class='op'>(</span><span class='op'>!</span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>require</a></span><span class='op'>(</span><span class='va'><a href='https://talgalili.github.io/installr/'>installr</a></span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
-    <span class='fu'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='op'>(</span><span class='st'>"installr"</span><span class='op'>)</span>
-    <span class='kw'><a href='https://rdrr.io/r/base/library.html'>require</a></span><span class='op'>(</span><span class='va'><a href='https://talgalili.github.io/installr/'>installr</a></span><span class='op'>)</span>
-<span class='op'>}</span>
-<span class='fu'><a href='https://talgalili.github.io/installr/reference/updateR.html'>updateR</a></span><span class='op'>(</span><span class='op'>)</span>
+<span class='kw'>if</span><span class='op'>(</span><span class='op'>!</span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>require</a></span><span class='op'>(</span><span class='va'><a href='https://talgalili.github.io/installr/'>installr</a></span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
+  <span class='fu'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='op'>(</span><span class='st'>"installr"</span><span class='op'>)</span>; <span class='kw'><a href='https://rdrr.io/r/base/library.html'>require</a></span><span class='op'>(</span><span class='va'><a href='https://talgalili.github.io/installr/'>installr</a></span><span class='op'>)</span><span class='op'>}</span> 
+<span class='fu'>updateR</span><span class='op'>(</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
@@ -2612,7 +2614,7 @@ Show Solution
 </div>
 <pre><code>function (x, na.rm = FALSE, ...) 
 UseMethod(&quot;median&quot;)
-&lt;bytecode: 0x000001cf41e6d050&gt;
+&lt;bytecode: 0x0000000012d49950&gt;
 &lt;environment: namespace:stats&gt;</code></pre>
 </div>
 <ul>
@@ -2682,13 +2684,7 @@ UseMethod(&quot;median&quot;)
 <span class='fu'><a href='https://rdrr.io/r/base/ls.html'>ls</a></span><span class='op'>(</span><span class='op'>)</span>
 </code></pre>
 </div>
-<pre><code> [1] &quot;arranged&quot;     &quot;arranged1&quot;    &quot;demo&quot;         &quot;filtered&quot;    
- [5] &quot;filtered1&quot;    &quot;foo&quot;          &quot;foo.df&quot;       &quot;foo.squared&quot; 
- [9] &quot;foo.squared2&quot; &quot;generation&quot;   &quot;gp&quot;           &quot;gp.mean&quot;     
-[13] &quot;grow&quot;         &quot;grow2&quot;        &quot;grow3&quot;        &quot;i&quot;           
-[17] &quot;mutated1&quot;     &quot;n&quot;            &quot;N&quot;            &quot;num_gen&quot;     
-[21] &quot;p&quot;            &quot;selected&quot;     &quot;selected1&quot;    &quot;selected2&quot;   
-[25] &quot;summarised&quot;  </code></pre>
+<pre><code>character(0)</code></pre>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -2699,13 +2695,7 @@ UseMethod(&quot;median&quot;)
 <span class='fu'><a href='https://rdrr.io/r/base/ls.html'>ls</a></span><span class='op'>(</span><span class='op'>)</span> <span class='co'># list objects 'a', 'b', 'c'</span>
 </code></pre>
 </div>
-<pre><code> [1] &quot;a&quot;            &quot;arranged&quot;     &quot;arranged1&quot;    &quot;b&quot;           
- [5] &quot;c&quot;            &quot;demo&quot;         &quot;filtered&quot;     &quot;filtered1&quot;   
- [9] &quot;foo&quot;          &quot;foo.df&quot;       &quot;foo.squared&quot;  &quot;foo.squared2&quot;
-[13] &quot;generation&quot;   &quot;gp&quot;           &quot;gp.mean&quot;      &quot;grow&quot;        
-[17] &quot;grow2&quot;        &quot;grow3&quot;        &quot;i&quot;            &quot;mutated1&quot;    
-[21] &quot;n&quot;            &quot;N&quot;            &quot;num_gen&quot;      &quot;p&quot;           
-[25] &quot;selected&quot;     &quot;selected1&quot;    &quot;selected2&quot;    &quot;summarised&quot;  </code></pre>
+<pre><code>[1] &quot;a&quot; &quot;b&quot; &quot;c&quot;</code></pre>
 </div>
 <p><strong>Note</strong>: two operators <code>&lt;-</code> and <code>=</code> can be used to import data. While longer, I favor <code>&lt;-</code> in the creation of object to avoid confusion with mathematical operator</p>
 <p>You can clean <code>rm</code> (remove) the objects <code>list</code> in memory <code>ls()</code> using:</p>
@@ -2780,16 +2770,15 @@ UseMethod(&quot;median&quot;)
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># import file by path name</span>
-<span class='va'>fish</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.table</a></span><span class='op'>(</span><span class='st'>"D:/.../Topic 1/Data/reef_fish.txt"</span>, header <span class='op'>=</span> <span class='cn'>TRUE</span>,
-    sep <span class='op'>=</span> <span class='st'>"\t"</span>, dec <span class='op'>=</span> <span class='st'>"."</span><span class='op'>)</span>  <span class='co'># long version</span>
-<span class='va'>fish</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.table</a></span><span class='op'>(</span><span class='st'>"D:/.../Topic 1/Data/reef_fish.txt"</span>, <span class='cn'>TRUE</span>, <span class='st'>"\t"</span>, <span class='st'>"."</span><span class='op'>)</span>  <span class='co'># short version</span>
+<span class='va'>fish</span><span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.table</a></span> <span class='op'>(</span><span class='st'>"D:/.../Topic 1/Data/reef_fish.txt"</span>,header <span class='op'>=</span> <span class='cn'>TRUE</span>,sep<span class='op'>=</span><span class='st'>"\t"</span>, dec<span class='op'>=</span><span class='st'>"."</span><span class='op'>)</span><span class='co'># long version</span>
+<span class='va'>fish</span><span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.table</a></span><span class='op'>(</span><span class='st'>"D:/.../Topic 1/Data/reef_fish.txt"</span>, <span class='cn'>TRUE</span>, <span class='st'>"\t"</span>,<span class='st'>"."</span><span class='op'>)</span><span class='co'># short version</span>
 </code></pre>
 </div>
 </div>
 <p>You can also use `file.choose()’ to locate directly the file on computer</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>fish</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.table</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/file.choose.html'>file.choose</a></span><span class='op'>(</span><span class='op'>)</span>, header <span class='op'>=</span> <span class='cn'>TRUE</span>, sep <span class='op'>=</span> <span class='st'>"\t"</span>, dec <span class='op'>=</span> <span class='st'>"."</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>fish</span><span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.table</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/file.choose.html'>file.choose</a></span> <span class='op'>(</span><span class='op'>)</span>, header <span class='op'>=</span> <span class='cn'>TRUE</span>,sep<span class='op'>=</span><span class='st'>"\t"</span>, dec<span class='op'>=</span><span class='st'>"."</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
